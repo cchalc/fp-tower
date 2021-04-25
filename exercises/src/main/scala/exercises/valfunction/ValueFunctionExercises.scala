@@ -10,8 +10,11 @@ object ValueFunctionExercises {
   // such as selectDigits("hello4world-80") == "480"
   // but     selectDigits("welcome") == ""
   // Note: You can use `filter` method from `String`, also check out the API of `Char`
-  def selectDigits(text: String): String =
-    ???
+  def selectDigits(text: String): String = 
+    text.filter(_.isDigit)
+    // text.filter((c: Char) => c.isDigit)
+    // text.filter(c => c.isDigit)
+
 
   // 1b. Implement `secret` which transforms all characters in a String to '*'
   // such as secret("Welcome123") == "**********"
