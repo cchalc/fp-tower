@@ -34,4 +34,17 @@ class ValueFunctionExercisesTest extends AnyFunSuite with ScalaCheckDrivenProper
   // Exercise 2: Point
   ///////////////////////
 
+  // check the length of secret matchs
+  test("secret examples") {
+    assert(secret("hello4world") == "***********")
+  }
+
+  test("property based secret test") {
+    forAll { (text: String) =>
+      val once = secret(text)
+      val twice = secret(secret(text))
+      assert(once == twice)
+    }
+  }
+
 }
